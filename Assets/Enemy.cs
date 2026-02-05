@@ -1,12 +1,14 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    float moveForce = 6f;
-    float maxSpeed = 4f;
+    public float moveForce = 6f;
+    public float maxSpeed = 4f;
 
+    int currentMeshRow;
     PathingNode targetNode;
 
     private void Awake()
@@ -18,7 +20,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        //targetNode = getNextNode(transform.position)
+        targetNode = PathingMesh.Instance.GetNextNode(-1, transform.position.x);
+        currentMeshRow = 0;
     }
 
     private void Update()
@@ -31,9 +34,11 @@ public class Enemy : MonoBehaviour
         if (rb.linearVelocity.magnitude > maxSpeed)
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
 
+       // Debug.Log(direction.magnitude);
         if (direction.magnitude < 0.2f)
         {
-            //targetNode = getNextNode(transform.position)
+            targetNode = PathingMesh.Instance.GetNextNode(currentMeshRow, transform.position.x);
+            currentMeshRow++;
         }
     }
 

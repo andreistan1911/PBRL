@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PathingNode : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private float x;
+
+    private void Awake()
     {
-        
+        x = transform.position.x;
     }
 
-    // Update is called once per frame
-    void Update()
+    public float GetX()
     {
-        
+        return x;
     }
 }
