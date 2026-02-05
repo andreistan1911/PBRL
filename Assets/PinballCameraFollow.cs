@@ -8,18 +8,11 @@ public class PinballCameraFollow : MonoBehaviour
     [Header("Follow")]
     public float followSmooth = 0.15f;
 
-    [Header("Zoom")]
-    public float minZoom = 6f;
-    public float maxZoom = 11f;
-    public float zoomSmooth = 0.2f;
-    public float speedForMaxZoom = 12f;
-
     [Header("Arena Limits")]
     public float arenaMinY;
     public float arenaMaxY;
 
     Camera cam;
-    float zoomVelocity;
     float yVelocity;
 
     void Awake()
@@ -31,7 +24,6 @@ public class PinballCameraFollow : MonoBehaviour
     void LateUpdate()
     {
         FollowBall();
-        //HandleZoom();
     }
 
     void FollowBall()
@@ -58,25 +50,5 @@ public class PinballCameraFollow : MonoBehaviour
             smoothY,
             transform.position.z
         );
-    }
-
-    void HandleZoom()
-    {
-        float speed = Mathf.Abs(ballRb.linearVelocity.y);
-
-        float targetZoom = Mathf.Lerp(
-            minZoom,
-            maxZoom,
-            Mathf.InverseLerp(0f, speedForMaxZoom, speed)
-        );
-
-        float smoothZoom = Mathf.SmoothDamp(
-            cam.orthographicSize,
-            targetZoom,
-            ref zoomVelocity,
-            zoomSmooth
-        );
-
-        cam.orthographicSize = smoothZoom;
     }
 }
