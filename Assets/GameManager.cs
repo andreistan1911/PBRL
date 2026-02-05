@@ -47,8 +47,8 @@ public class GameManager : MonoBehaviour
         {
             if (angle < 60 - 0.2f)
             {
-                motor.motorSpeed = isLeft ? -1500f : +1500f;
-                motor.maxMotorTorque = 50000f;
+                motor.motorSpeed = isLeft ? -800f : +800f;
+                motor.maxMotorTorque = 20000f;
             }
             else
             {
