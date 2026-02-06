@@ -5,11 +5,12 @@ public class Enemy : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    public float moveForce = 6f;
-    public float maxSpeed = 4f;
+    private float moveForce = 6f;
 
     int currentMeshRow;
     PathingNode targetNode;
+
+    public EnemyStats stats;
 
     private void Awake()
     {
@@ -22,6 +23,8 @@ public class Enemy : MonoBehaviour
     {
         targetNode = PathingMesh.instance.GetNextNode(-1, transform.position.x);
         currentMeshRow = 0;
+
+        stats.speed = 0.8f;
     }
 
     private void Update()
@@ -33,19 +36,31 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            TakeShieldDamage();
             TakeHealthDamage();
+            TakeShieldDamage();
         }
     }
 
     private void TakeShieldDamage()
     {
-        // TODO
+        if (stats.shield > 0)
+            stats.shield--;
+
+        // TODO: visual update la casca
     }
 
     private void TakeHealthDamage()
     {
-        // TODO
+        if (stats.shield == 0)
+        {
+            if (stats.health > 0)
+                stats.health--;
+
+            if (stats.health <= 0)
+                Destroy(gameObject);
+        }
+
+        // TODO: visual upgrade la gras
     }
 
     private void Move()
@@ -55,8 +70,8 @@ public class Enemy : MonoBehaviour
 
         rb.AddForce(forceVector, ForceMode2D.Force);
 
-        if (rb.linearVelocity.magnitude > maxSpeed)
-            rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
+        if (rb.linearVelocity.magnitude > stats.speed)
+            rb.linearVelocity = rb.linearVelocity.normalized * stats.speed;
 
         // Debug.Log(direction.magnitude);
         if (direction.magnitude < 0.2f)

@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
         HandleFlipper(leftHinge, KeyCode.A, true);
         HandleFlipper(rightHinge, KeyCode.D, false);
     }

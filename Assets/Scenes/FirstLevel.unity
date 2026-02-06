@@ -529,19 +529,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3811319536317700349, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3811319536317700349, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3811319536317700349, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.758
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 3811319536317700349, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.42
+      value: 7.53
       objectReference: {fileID: 0}
     - target: {fileID: 3811319536317700349, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -581,6 +581,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6678646609207905729, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: maxSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678646609207905729, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
+      propertyPath: stats.health
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6644,19 +6648,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3811319536317700349, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3811319536317700349, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3811319536317700349, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.26
+      value: -0.98
       objectReference: {fileID: 0}
     - target: {fileID: 3811319536317700349, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.068
+      value: 8.33
       objectReference: {fileID: 0}
     - target: {fileID: 3811319536317700349, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6696,6 +6700,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6678646609207905729, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
       propertyPath: maxSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678646609207905729, guid: 09369d0e187836b48ac1af42de1752b9, type: 3}
+      propertyPath: stats.health
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

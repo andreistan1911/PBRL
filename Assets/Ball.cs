@@ -2,41 +2,28 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    Rigidbody2D rb;
-
     public float maxSpin = 1200f;
 
-    void Awake()
+    private Rigidbody2D rb;
+    private int damage;
+
+    public int GetDamage()
+    {
+        return damage;
+    }
+
+    public void SetDamage(int damage)
+    {
+        this.damage = damage;
+    }
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -maxSpin, maxSpin);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        string tag = collision.gameObject.tag;
-
-        switch (tag)
-        {
-            case "Dead":
-                Time.timeScale = 0;
-                break;
-
-            case "Bouncer":
-                break;
-
-            case "Point":
-                break;
-
-            case "Flipper":
-                break;
-
-            default:
-                break;
-        }
     }
 }
