@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class Global : ScriptableObject
+public static class Global
 {
     public static bool isDataLoaded = false;
 
@@ -14,10 +14,5 @@ public class Global : ScriptableObject
     {
         Basic,
         Shielded
-    }
-
-    private void Awake()
-    {
-        //noop
     }
 }
