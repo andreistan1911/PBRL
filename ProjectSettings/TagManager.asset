@@ -5,9 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Dead
-  - Point
   - Flipper
-  - Bouncer
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,10 +14,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Flipper
+  - Wall
+  - Ball
+  - Enemy
   - 
   - 
   - 

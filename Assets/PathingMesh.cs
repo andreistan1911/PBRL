@@ -5,11 +5,17 @@ public class PathingMesh : MonoBehaviour
     public NodeRow[] grid;
 
     [HideInInspector]
-    public static PathingMesh Instance;
+    public static PathingMesh instance;
 
     private void Awake()
     {
-        Instance = this;
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
+        if (grid == null)
+            Debug.LogError("No grid");
     }
 
     private void Start()

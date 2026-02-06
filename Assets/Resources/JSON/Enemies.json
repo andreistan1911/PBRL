@@ -1,0 +1,16 @@
+{
+  "enemy": [
+    {
+      "type": "Basic",
+      "health": 1.0,
+      "shield": 0,
+      "speed": 0.2
+    },
+    {
+      "type": "Shielded",
+      "health": 1.0,
+      "shield": 1,
+      "speed": 0.1
+    }
+  ]
+}

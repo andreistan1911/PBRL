@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5188819474178757753}
   - component: {fileID: 899117624338102657}
   - component: {fileID: 7687865041748129718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,3 +165,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9542634d2cf784db542a3ad6dc0621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpin: 2000

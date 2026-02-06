@@ -20,11 +20,35 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        targetNode = PathingMesh.Instance.GetNextNode(-1, transform.position.x);
+        targetNode = PathingMesh.instance.GetNextNode(-1, transform.position.x);
         currentMeshRow = 0;
     }
 
     private void Update()
+    {
+        Move();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            TakeShieldDamage();
+            TakeHealthDamage();
+        }
+    }
+
+    private void TakeShieldDamage()
+    {
+        // TODO
+    }
+
+    private void TakeHealthDamage()
+    {
+        // TODO
+    }
+
+    private void Move()
     {
         Vector2 direction = targetNode.transform.position - transform.position;
         Vector2 forceVector = direction.normalized * moveForce;
@@ -34,10 +58,10 @@ public class Enemy : MonoBehaviour
         if (rb.linearVelocity.magnitude > maxSpeed)
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
 
-       // Debug.Log(direction.magnitude);
+        // Debug.Log(direction.magnitude);
         if (direction.magnitude < 0.2f)
         {
-            targetNode = PathingMesh.Instance.GetNextNode(currentMeshRow, transform.position.x);
+            targetNode = PathingMesh.instance.GetNextNode(currentMeshRow, transform.position.x);
             currentMeshRow++;
         }
     }
